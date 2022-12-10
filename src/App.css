@@ -1,38 +1,56 @@
 .App {
   text-align: center;
+  background-image: linear-gradient(rgb(97, 96, 96), rgb(34, 34, 34));
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Position {
+  margin: 1rem;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.App P {
+  font-size: large;
+  font-weight: bold;
+  color: rgba(142, 125, 96, 255);
+}
+
+.App button {
+  width: 7rem;
+  height: 3rem;
+  margin: 2rem;
+  font-size: large;
+  font-weight: bold;
+  color: #d4b37f;
+  background-color: black;
+  border: 2px solid rgba(142, 125, 96, 255);
+  border-radius: 5rem;
+}
+
+.result {
+  height: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Vs {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.result h1 {
+  margin: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Rock {
+  color: rgba(38, 128, 234, 255);
+  margin: 1rem;
+}
+
+.Paper {
+  color: rgba(22, 195, 89, 255);
+  margin: 1rem;
+}
+
+.Scissors {
+  color: rgba(227, 21, 66, 255);
 }
