@@ -24,6 +24,7 @@
   background-color: black;
   border: 2px solid rgba(142, 125, 96, 255);
   border-radius: 5rem;
+  cursor: pointer;
 }
 
 .result {
@@ -33,15 +34,16 @@
   align-items: center;
 }
 
-.Vs {
+.result h1 {
+  margin: 1rem;
   color: white;
 }
 
-.result h1 {
-  margin: 1rem;
+.Vs {
+  color: yellow;
 }
 
-.Rock {
+/* .Rock {
   color: rgba(38, 128, 234, 255);
   margin: 1rem;
 }
@@ -53,4 +55,4 @@
 
 .Scissors {
   color: rgba(227, 21, 66, 255);
-}
+} */

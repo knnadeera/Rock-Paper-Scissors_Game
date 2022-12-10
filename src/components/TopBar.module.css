@@ -12,11 +12,11 @@
   align-items: center;
   color: rgba(212, 179, 127, 255);
   padding: 0px 3rem;
-  font-size: x-small;
+  font-size: small;
 }
 
 .topBar p {
   color: white;
   margin: 0.2rem;
-  font-size: x-small;
+  font-size: small;
 }

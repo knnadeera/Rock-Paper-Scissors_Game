@@ -12,7 +12,7 @@ const TopBar = (props) => {
           BET:<p>{props.bet}</p>
         </h1>
         <h1>
-          WIN:<p>{props.win}</p>
+          WIN:<p>{props.winValue}</p>
         </h1>
       </div>
     </Fragment>
