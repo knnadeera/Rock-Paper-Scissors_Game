@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Rock-Paper-Scissors_Game/static/css/main.9e068e31.css",
-    "main.js": "/Rock-Paper-Scissors_Game/static/js/main.51f02dcb.js",
+    "main.css": "/Rock-Paper-Scissors_Game/static/css/main.e7678226.css",
+    "main.js": "/Rock-Paper-Scissors_Game/static/js/main.5963f5a6.js",
     "static/js/787.5480e000.chunk.js": "/Rock-Paper-Scissors_Game/static/js/787.5480e000.chunk.js",
     "index.html": "/Rock-Paper-Scissors_Game/index.html",
-    "main.9e068e31.css.map": "/Rock-Paper-Scissors_Game/static/css/main.9e068e31.css.map",
-    "main.51f02dcb.js.map": "/Rock-Paper-Scissors_Game/static/js/main.51f02dcb.js.map",
+    "main.e7678226.css.map": "/Rock-Paper-Scissors_Game/static/css/main.e7678226.css.map",
+    "main.5963f5a6.js.map": "/Rock-Paper-Scissors_Game/static/js/main.5963f5a6.js.map",
     "787.5480e000.chunk.js.map": "/Rock-Paper-Scissors_Game/static/js/787.5480e000.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9e068e31.css",
-    "static/js/main.51f02dcb.js"
+    "static/css/main.e7678226.css",
+    "static/js/main.5963f5a6.js"
   ]
 }
