@@ -1,0 +1,73 @@
+.Body {
+    text-align: center;
+    background-image: linear-gradient(rgb(97, 96, 96), rgb(34, 34, 34));
+  }
+  
+  .Position {
+    margin: 0.1rem;
+    display: flex;
+    justify-content: center;
+  }
+  .Body P {
+    margin: 0;
+    font-size: large;
+    font-weight: bold;
+    color: #d4b37f;
+  }
+  
+  .Positions {
+    color: white;
+    margin: 0.5rem;
+  }
+  
+  .Body button {
+    width: 7rem;
+    height: 3rem;
+    margin: 2rem;
+    font-size: large;
+    font-weight: bold;
+    color: #d4b37f;
+    background-color: black;
+    border: 2px solid rgba(142, 125, 96, 255);
+    border-radius: 5rem;
+    cursor: pointer;
+  }
+  
+  .result {
+    margin: 0;
+    height: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .Vs {
+    color:#d4b37f;
+  }
+  
+  .won {
+    margin: 0;
+    font-size: 4rem;
+    color: rgba(22, 195, 89, 255);
+  }
+  
+  .loose {
+    margin: 0;
+    font-size: 4rem;
+    color: rgba(227, 21, 66, 255);
+  }
+  
+  /* .Rock {
+    color: rgba(38, 128, 234, 255);
+    margin: 1rem;
+  }
+  
+  .Paper {
+    color: rgba(22, 195, 89, 255);
+    margin: 1rem;
+  }
+  
+  .Scissors {
+    color: rgba(227, 21, 66, 255);
+  } */
+  
