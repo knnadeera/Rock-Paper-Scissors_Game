@@ -18,11 +18,11 @@ const Position = (props) => {
     dynmcClasse = classes.scissors;
   }
 
-  const cssClasses = `${classes.silection} ${dynmcClasse}`;
+  const cssClasses = `${classes.selection} ${dynmcClasse}`;
 
   return (
     <div className={cssClasses} onClick={props.onClick}>
-      {amount>0 && <p>{amount}</p>}
+      {amount>0 && <h1>{amount}</h1>}
       <h2>{props.position}</h2>
     </div>
   );

@@ -1,4 +1,4 @@
-.silection {
+.selection {
   width: 9rem;
   height: 7rem;
   border-radius: 5px;
@@ -10,12 +10,12 @@
   cursor: pointer;
 }
 
-.silection h2 {
+.selection h2 {
   font-size: 3ch;
   margin: 0%;
 }
 
-.silection p {
+.selection h1 {
   width: 2.1rem;
   height: 2.1rem;
   background-color: white;
@@ -36,7 +36,8 @@
   color: rgba(38, 128, 234, 255);
 }
 
-.rock p {
+.rock h1 {
+  color: rgba(38, 128, 234, 255);
   border: 2px solid rgba(38, 128, 234, 255);
 }
 
@@ -49,7 +50,8 @@
   color: rgba(22, 195, 89, 255);
 }
 
-.paper p {
+.paper h1 {
+  color: rgba(22, 195, 89, 255);
   border: 2px solid rgba(22, 195, 89, 255);
 }
 
@@ -62,6 +64,7 @@
   color: rgba(227, 21, 66, 255);
 }
 
-.scissors p {
+.scissors h1 {
+  color: rgba(227, 21, 66, 255);
   border: 2px solid rgba(227, 21, 66, 255);
 }

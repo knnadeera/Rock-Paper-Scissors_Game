@@ -1,5 +1,5 @@
 import { Fragment, useState } from "react";
-import "./App.css";
+import classes from "./App.module.css";
 import Position from "./components/Position";
 import TopBar from "./components/TopBar";
 
@@ -22,10 +22,12 @@ function App() {
 
   let totalBet = rBetValue + pBetValue + sBetValue;
 
+  //winning states
+
   const rockPositionHandler = () => {
     if (!!paperState && !!scissorsState && !played) {
       setError(true);
-    } else if (!played) {
+    } else if (!played && balance !== totalBet) {
       setRockState(true);
       setRBetValue(rBetValue + 500);
     }
@@ -34,18 +36,18 @@ function App() {
   const paperPositionHandler = () => {
     if (!!rockState && !!scissorsState && !played) {
       setError(true);
-    } else if (!played) {
-      setPBetValue(pBetValue + 500);
+    } else if (!played && balance !== totalBet) {
       setPaperState(true);
+      setPBetValue(pBetValue + 500);
     }
   };
 
   const scissorsPositionHandler = () => {
     if (!!rockState && !!paperState && !played) {
       setError(true);
-    } else if (!played) {
-      setSBetValue(sBetValue + 500);
+    } else if (!played && balance !== totalBet) {
       setScissorsState(true);
+      setSBetValue(sBetValue + 500);
     }
   };
 
@@ -56,44 +58,64 @@ function App() {
       return;
     }
 
-    console.log(winValue);
+    // winning comparison
 
     if (
       rockState &&
       (gameValue[random] === "ROCK" || gameValue[random] === "PAPER")
     ) {
       setPcWin(true);
-      setBalance(balance - +rBetValue);
+      setBalance(balance - +totalBet);
     } else if (rockState && gameValue[random] === "SCISSORS") {
       setPlayerWin(true);
-      setWinValue(winValue + +rBetValue * 14);
-      setBalance(balance - +rBetValue + +rBetValue * 14);
-      console.log("bal", balance);
-      console.log(winValue);
+
+      (scissorsState || paperState) &&
+        setWinValue(winValue + +rBetValue * 3) &&
+        setBalance(balance - +rBetValue + +rBetValue * 3);
+
+      !scissorsState &&
+        !paperState &&
+        setWinValue(winValue + +rBetValue * 14) &&
+        setBalance(balance - +rBetValue + +rBetValue * 14);
     }
 
     if (
       paperState &&
       (gameValue[random] === "PAPER" || gameValue[random] === "SCISSORS")
     ) {
-      setPcWin(true);
+      setPcWin("paper");
+      setBalance(balance - +pBetValue);
     } else if (paperState && gameValue[random] === "ROCK") {
-      setPlayerWin(true);
-      setWinValue(winValue + +pBetValue * 14);
-      setBalance(balance - +pBetValue + +pBetValue * 14);
+      setPlayerWin("paper");
+
+      (rockState || scissorsState) &&
+        setWinValue(winValue + +pBetValue * 3) &&
+        setBalance(balance - +pBetValue + +pBetValue * 3);
+
+      !rockState &&
+        !scissorsState &&
+        setWinValue(winValue + +pBetValue * 14) &&
+        setBalance(balance - +pBetValue + +pBetValue * 14);
     }
 
     if (
       scissorsState &&
       (gameValue[random] === "SCISSORS" || gameValue[random] === "ROCK")
     ) {
-      setPcWin(true);
+      setPcWin("scissors");
+      setBalance(balance - +sBetValue);
     } else if (scissorsState && gameValue[random] === "PAPER") {
-      setPlayerWin(true);
-      setWinValue(winValue + +sBetValue * 14);
-      setBalance(balance - +sBetValue + +sBetValue * 14);
-    }
+      setPlayerWin("scissors");
 
+      (paperState || rockState) &&
+        setWinValue(winValue + +sBetValue * 3) &&
+        setBalance(balance - +sBetValue + +sBetValue * 3);
+
+      !paperState &&
+        !rockState &&
+        setWinValue(winValue + +sBetValue * 14) &&
+        setBalance(balance - +sBetValue + +sBetValue * 14);
+    }
     setPcPosition(gameValue[random]);
 
     setPlayed(true);
@@ -115,25 +137,33 @@ function App() {
 
   const result = (
     <Fragment>
-      <div className="result">
-        <section className="Positions">
-          {rockState && <h1>ROCK</h1>}
-          {paperState && <h1>PAPER</h1>}
-          {scissorsState && <h1>SCISSORS</h1>}
-          {!rockState && !paperState && !scissorsState && <h1>___________</h1>}
-        </section>
-        <section>
-          <h1 className="Vs">vs</h1>
-        </section>
-
-        <section>
-          {!pcPosition && <h1>___________</h1>}
-          {pcPosition && <h1>{pcPosition}</h1>}
-        </section>
-      </div>
       <div>
-        {playerWin && <p>YOU WON</p>}
-        {pcWin && <p>YOU LOOSE</p>}
+        {playerWin && (
+          <div>
+            <h2 className={classes.won}>YOU WON</h2>
+            <p>YOU WIN:</p>
+            {/* <h1>{winValue}</h1> */}
+          </div>
+        )}
+        {pcWin && !playerWin && <h2 className={classes.loose}>YOU LOOSE</h2>}{" "}
+        <div className={classes.result}>
+          <section className={classes.Positions}>
+            {rockState && <h1>ROCK</h1>}
+            {paperState && <h1>PAPER</h1>}
+            {scissorsState && <h1>SCISSORS</h1>}
+            {!rockState && !paperState && !scissorsState && (
+              <h1>___________</h1>
+            )}
+          </section>
+          <section>
+            <h1 className={classes.Vs}>vs</h1>
+          </section>
+
+          <section>
+            {!pcPosition && <h1>___________</h1>}
+            {pcPosition && <h1>{pcPosition}</h1>}
+          </section>
+        </div>
         {!error && !rockState && !paperState && !scissorsState && (
           <p>PICK YOUR POSITION</p>
         )}
@@ -146,12 +176,12 @@ function App() {
   );
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className={classes.App}>
+      <header>
         <TopBar balance={balance} bet={totalBet} winValue={winValue} />
       </header>
       {result}
-      <div className="Position">
+      <div className={classes.Position}>
         <Position
           amount={rBetValue}
           position={"ROCK"}

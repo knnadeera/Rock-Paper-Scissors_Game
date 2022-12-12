@@ -4,14 +4,20 @@
 }
 
 .Position {
-  margin: 1rem;
+  margin: 0.1rem;
   display: flex;
   justify-content: center;
 }
 .App P {
+  margin: 0;
   font-size: large;
   font-weight: bold;
-  color: rgba(142, 125, 96, 255);
+  color: #d4b37f;
+}
+
+.App h1 {
+  color: white;
+  margin: 0.5rem;
 }
 
 .App button {
@@ -28,19 +34,27 @@
 }
 
 .result {
+  margin: 0;
   height: 15rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.result h1 {
-  margin: 1rem;
-  color: white;
-}
-
 .Vs {
   color: yellow;
+}
+
+.won {
+  margin: 0;
+  font-size: 4rem;
+  color: rgba(22, 195, 89, 255);
+}
+
+.loose {
+  margin: 0;
+  font-size: 4rem;
+  color: rgba(227, 21, 66, 255);
 }
 
 /* .Rock {
