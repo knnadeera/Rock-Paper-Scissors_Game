@@ -142,27 +142,25 @@ function App() {
           <div>
             <h2 className={classes.won}>YOU WON</h2>
             <p>YOU WIN:</p>
-            {/* <h1>{winValue}</h1> */}
           </div>
         )}
         {pcWin && !playerWin && <h2 className={classes.loose}>YOU LOOSE</h2>}{" "}
         <div className={classes.result}>
-          <section className={classes.Positions}>
-            {rockState && <h1>ROCK</h1>}
-            {paperState && <h1>PAPER</h1>}
-            {scissorsState && <h1>SCISSORS</h1>}
-            {!rockState && !paperState && !scissorsState && (
-              <h1>___________</h1>
-            )}
-          </section>
-          <section>
-            <h1 className={classes.Vs}>vs</h1>
-          </section>
-
-          <section>
-            {!pcPosition && <h1>___________</h1>}
-            {pcPosition && <h1>{pcPosition}</h1>}
-          </section>
+          {(rockState || paperState || scissorsState) && (
+            <div className={classes.result}>
+              <section className={classes.Positions}>
+                {rockState && <h1>ROCK</h1>}
+                {paperState && <h1>PAPER</h1>}
+                {scissorsState && <h1>SCISSORS</h1>}
+              </section>
+              <section>
+                <h1 className={classes.Vs}>vs</h1>
+              </section>
+              <section className={classes.Positions}>
+                {pcPosition && <h1>{pcPosition}</h1>}
+              </section>
+            </div>
+          )}
         </div>
         {!error && !rockState && !paperState && !scissorsState && (
           <p>PICK YOUR POSITION</p>
